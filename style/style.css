@@ -52,6 +52,11 @@ body {
     font-family: "Roboto Mono", monospace;
 }
 
+.logo:hover {
+    transform: scale(105%);
+    transition: linear 0.2s;
+}
+
 .dot-color {
     color: #B8A893;
 }
@@ -69,10 +74,22 @@ body {
     font-family: "Roboto Mono", monospace;
 }
 
-.selected {
+.btn:hover {
+    background-color: #252323;
+    transition: linear 0.2s;
+}
+
+
+.selectednav {
     background-color: #1A1A1A;
     color: white;
     border: none;
+}
+
+.selectednav:hover {
+    background-color: #272727;
+    color: white;
+    transition: linear 0.2s;
 }
 
 
@@ -89,6 +106,12 @@ body {
     font-family: "Roboto Mono", monospace;
 }
 
+.btn-diff:hover {
+    background-color: #d5bb9b;
+    color: #1f1f1f;
+    transition: linear 0.2s;
+}
+
 .btn-cart {
     display: inline-block;
     padding: 5px 15px;
@@ -97,6 +120,12 @@ body {
     background-color: #1A1A1A;
     cursor: pointer;
     font-family: "Roboto Mono", monospace;
+}
+
+.btn-cart:hover {
+    transform: scale(105%);
+    background-color: #2b2b2b;
+    transition: linear 0.2s;
 }
 
 .left {
@@ -171,7 +200,54 @@ main {
     gap: 4px;
     cursor: pointer;
     font-family: "Roboto Mono", monospace;
+    transition: all 0.3s ease;
 }
+
+.border-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    padding: 1px;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) border-box;
+    mask-composite: exclude;
+}
+
+.border-glow {
+    background: conic-gradient(from 0deg, 
+        transparent 0%,
+        #fff 10%,
+        #000 15%,
+        transparent 20%
+    );
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    transform-origin: 0 0;
+    animation: rotateShine 3s linear infinite;
+}
+
+@keyframes rotateShine {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+
+}
+
+.btn-pos:hover {
+    background-color: #2b2b2b;
+    transform: scale(1.05) translateX(-50%);
+}
+
 
 .choices {
     grid-column: 1/3;
@@ -200,6 +276,19 @@ main {
     color: #B3B3B2;
     cursor: pointer;
     font-family: "Roboto Mono", monospace;
+}
+
+.cat-btn:hover {
+    background-color: #1F1F1F;
+    transform: scale(1.05);
+    transition: linear 0.2s;
+}
+
+.cat-btn.selected:hover {
+    background-color: #afa393;
+    color: #0F0F0F;
+    border: none;
+    transition: linear 0.2s;
 }
 
 .hero-title {
@@ -410,6 +499,11 @@ main {
     height: 280px;
 }
 
+.card-img:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.3s;
+}
+
 .card-flex {
     display: flex;
     justify-content: space-between;
@@ -435,6 +529,12 @@ main {
     display: flex;
     justify-content: center;
     gap: 5px;
+}
+
+.card-btn:hover {
+    background-color: #2b2a2a;
+    transform: scale(1.05);
+    transition: linear 0.2s;
 }
 
 .card-title {
@@ -496,6 +596,14 @@ main {
 .question-title {
     font-size: 20px;
     font-weight: 500;
+    cursor: pointer;
+}
+
+.question-title:hover {
+    transform: translateX(-5px);
+    translate: calc(2%);
+    color: #fdae4d;
+    transition: ease 0.2s;
 }
 
 .question-desc {
@@ -561,6 +669,30 @@ footer {
     height: 50px;
     border-radius: 12px;
     background-color: #D6CDC2;
+    animation: footerMedia 4s linear infinite;
+}
+
+.ig {
+    animation-delay: 0s;
+}
+.ball {
+    animation-delay: 2s;
+}
+.x {
+    animation-delay: 3s;
+}
+.brl {
+    animation-delay: 4s;
+}
+
+@keyframes footerMedia {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .footer-nav {
@@ -574,6 +706,12 @@ footer {
 
 .nav-title {
     color: white;
+}
+
+.nav-title:hover {
+    color: rgb(224, 224, 224);
+    transform: scale(1.1) translate(5%);
+    transition: linear 0.2s;
 }
 
 .olinks {
